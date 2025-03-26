@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "../assets/css/components/SidebarComponent.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome, faScrewdriverWrench, faUserGroup, faTruckField} from "@fortawesome/free-solid-svg-icons"; /* Iconos del menú*/
-import { faChevronCircleDown, faChevronCircleUp, faPowerOff, faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faScrewdriverWrench, faUserGroup, faTruckField, faCartShopping, faClipboard, faImages} from "@fortawesome/free-solid-svg-icons"; /* Iconos del menú*/
+import { faChevronCircleDown, faChevronCircleUp, faPowerOff, faChevronLeft, faChevronRight, faArrowUpFromBracket } from "@fortawesome/free-solid-svg-icons";
 
 const SidebarComponent = () => {
 
@@ -42,12 +42,21 @@ const SidebarComponent = () => {
                 <li title="Grupos" className={`submenu-item ${location.pathname.includes("/groups") ? "active" : ""} ${!sidebarVisible ? "submenu-item--modify" : ""}`}>
                   <Link className={`${ sidebarVisible ? "" : "submenu-item--modify" }`} to="/groups"><FontAwesomeIcon className="pe-3" icon={faUserGroup} /><label className={`${visibleClass}`}>Grupos</label></Link>
                 </li>
+                <li title="Contenido de la página" className={`submenu-item ${location.pathname.includes("/services") ? "active" : ""} ${!sidebarVisible ? "submenu-item--modify" : ""}`}>
+                  <Link className={`${ sidebarVisible ? "" : "submenu-item--modify" }`} to="/services"><FontAwesomeIcon className="pe-3" icon={faImages} /><label className={`${visibleClass}`}>Contenido</label></Link>
+                </li>
                 <li title="Servicios" className={`submenu-item ${location.pathname.includes("/services") ? "active" : ""} ${!sidebarVisible ? "submenu-item--modify" : ""}`}>
                   <Link className={`${ sidebarVisible ? "" : "submenu-item--modify" }`} to="/services"><FontAwesomeIcon className="pe-3" icon={faTruckField} /><label className={`${visibleClass}`}>Servicios</label></Link>
                 </li>
-                {/* <li><Link to="/groups/add">Tipo de ETL</Link></li>
-                <li><Link to="/groups/add">Tipo de prestamos</Link></li>
-                <li><Link to="/groups/add">Tipo de productos</Link></li> */}
+                <li title="Prestamos" className={`submenu-item ${location.pathname.includes("/services") ? "active" : ""} ${!sidebarVisible ? "submenu-item--modify" : ""}`}>
+                  <Link className={`${ sidebarVisible ? "" : "submenu-item--modify" }`} to="/services"><FontAwesomeIcon className="pe-3" icon={faClipboard} /><label className={`${visibleClass}`}>Prestamos</label></Link>
+                </li>
+                <li title="Productos" className={`submenu-item ${location.pathname.includes("/services") ? "active" : ""} ${!sidebarVisible ? "submenu-item--modify" : ""}`}>
+                  <Link className={`${ sidebarVisible ? "" : "submenu-item--modify" }`} to="/services"><FontAwesomeIcon className="pe-3" icon={faCartShopping} /><label className={`${visibleClass}`}>Productos</label></Link>
+                </li>
+                <li title="Cargues masivos" className={`submenu-item ${location.pathname.includes("/services") ? "active" : ""} ${!sidebarVisible ? "submenu-item--modify" : ""}`}>
+                  <Link className={`${ sidebarVisible ? "" : "submenu-item--modify" }`} to="/services"><FontAwesomeIcon className="pe-3" icon={faArrowUpFromBracket} /><label className={`${visibleClass}`}>Cargues masivos</label></Link>
+                </li>
               </ul>
             )}
           </li>

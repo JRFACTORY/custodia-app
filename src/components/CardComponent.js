@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const CardComponent = ({ icon, number, text, classcard, classicon}) => {
 
   return (
-    <div className="col-12 col-sm-6 col-md-5 col-lg-6 mt-3 px-2">
+    <div className="col-12 col-sm-6 col-md-5 col-lg-4 mt-3 px-2">
       <div className={`card ${classcard}`}>
         <div className="row">
           <div className="col-4 d-flex justify-content-center align-items-center">
